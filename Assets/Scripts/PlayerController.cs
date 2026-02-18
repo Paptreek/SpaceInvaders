@@ -3,18 +3,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D _rb;
     private InputAction _moveAction;
     private float _moveSpeed = 5;
+    private Vector2 _moveValue;
     
     void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Vector2 moveValue = _moveAction.ReadValue<Vector2>();
+        _moveValue = _moveAction.ReadValue<Vector2>();
+    }
 
-        transform.Translate(new Vector3(moveValue.x, 0, 0) * _moveSpeed * Time.deltaTime);
+    private void FixedUpdate()
+    {
+        _rb.linearVelocityX = _moveValue.x * _moveSpeed;
     }
 }
