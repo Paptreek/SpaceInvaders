@@ -8,8 +8,10 @@ public class Enemy : MonoBehaviour
     public ParticleSystem explosionEffect;
 
     private Rigidbody2D _rb;
-    private float _moveSpeed = 3.0f;
+    private float _moveSpeed = 20.0f;
     private float _shootTimer = 0.0f;
+    private float _moveTimer = 1.0f;
+    private float _updatedMoveTimer = 1.0f;
 
     private void Start()
     {
@@ -24,7 +26,17 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.linearVelocityX = _moveSpeed;
+        _moveTimer -= Time.deltaTime;
+
+        if (_moveTimer <= 0)
+        {
+            _rb.linearVelocityX = _moveSpeed;
+            _moveTimer = _updatedMoveTimer;
+        }
+        else
+        {
+            _rb.linearVelocityX = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +54,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             _moveSpeed = -_moveSpeed;
+            _updatedMoveTimer -= 0.1f;
             transform.position = new Vector3(transform.position.x, transform.position.y - 0.25f, 0);
         }
     }
