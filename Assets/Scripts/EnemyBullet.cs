@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class BulletMovement : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     private float _moveSpeed = 4.0f;
 
     private void Update()
     {
-        transform.Translate(new Vector3(0, _moveSpeed, 0) * Time.deltaTime);
+        transform.Translate(new Vector3(0, -_moveSpeed, 0) * Time.deltaTime);
 
         if (transform.position.y > 5.5f)
         {
@@ -16,6 +16,9 @@ public class BulletMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
