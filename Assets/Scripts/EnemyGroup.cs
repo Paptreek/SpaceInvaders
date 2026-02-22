@@ -4,9 +4,15 @@ using System.Linq;
 
 public class EnemyGroup : MonoBehaviour
 {
-    public List<GameObject> enemies = new List<GameObject>();
+    [SerializeField]
+    private GameObject _enemy;
+
+    [SerializeField]
+    private List<GameObject> _enemies = new List<GameObject>();
 
     private float _timer = 3.0f;
+
+    public List<GameObject> enemies = new List<GameObject>();
 
     private void Update()
     {
@@ -37,7 +43,10 @@ public class EnemyGroup : MonoBehaviour
 
         if (_timer <= 0)
         {
-            enemies[random].GetComponent<Enemy>().FireBullet();
+            if (enemies.Count > 0)
+            {
+                enemies[random].GetComponent<Enemy>().FireBullet();
+            }
 
             _timer = 5.0f;
         }

@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        explosionEffect.transform.position = transform.position;
+        //explosionEffect.transform.position = transform.position;
     }
 
     private void FixedUpdate()
@@ -50,6 +50,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+            explosionEffect.transform.position = transform.position;
+
             explosionEffect.Play();
             explosionSound.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
