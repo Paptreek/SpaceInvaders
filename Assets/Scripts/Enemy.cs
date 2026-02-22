@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         explosionEffect.transform.position = transform.position;
-        FireBullet();
+        //FireBullet();
     }
 
     private void FixedUpdate()
@@ -58,17 +58,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FireBullet()
+    public void FireBullet()
     {
-        _shootTimer -= Time.deltaTime;
+        //_shootTimer -= Time.deltaTime;
 
-        if (_shootTimer <= 0)
-        {
-            bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
-            bulletSound.GetComponent<AudioSource>().Play();
-            Instantiate(bullet);
-            _shootTimer = 5.0f;
-        }
+        //if (_shootTimer <= 0)
+        //{
+        //    bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
+        //    bulletSound.GetComponent<AudioSource>().Play();
+        //    Instantiate(bullet);
+        //    _shootTimer = 5.0f;
+        //}
+
+        bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
+        bulletSound.GetComponent<AudioSource>().Play();
+        Instantiate(bullet);
     }
 
     private void FlipDirection()

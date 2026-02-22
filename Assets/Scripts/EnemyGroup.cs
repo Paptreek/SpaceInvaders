@@ -8,6 +8,8 @@ public class EnemyGroup : MonoBehaviour
 
     public List<GameObject> enemies = new List<GameObject>();
 
+    private float _timer = 3.0f;
+
     private void Update()
     {
         foreach (GameObject enemy in enemies.ToList())
@@ -26,6 +28,8 @@ public class EnemyGroup : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        RandomEnemyShoot();
     }
 
     private void UpdateBoxColliderSize()
@@ -60,6 +64,24 @@ public class EnemyGroup : MonoBehaviour
                     enemy.GetComponent<Enemy>().isDirectionFlipped = true;
                 }
             }
+        }
+    }
+
+    private void RandomEnemyShoot()
+    {
+        _timer -= Time.deltaTime;
+
+        int random = Random.Range(0, enemies.Count);
+
+        if (_timer <= 0)
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                //enemies[Random.Range(0, enemies.Count)].GetComponent<Enemy>().FireBullet();
+                enemies[random].GetComponent<Enemy>().FireBullet();
+            }
+
+            _timer = 5.0f;
         }
     }
 }
