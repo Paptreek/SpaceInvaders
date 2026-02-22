@@ -7,11 +7,11 @@ public class Enemy : MonoBehaviour
     public GameObject explosionSound;
     public ParticleSystem explosionEffect;
 
-    public bool isDirectionFlipped;
+    public bool NeedsToFlipDirection { get; private set; }
 
     private Rigidbody2D _rb;
+    private bool _needsToMoveDown;
     private float _moveSpeed = 0.25f;
-    private float _shootTimer = 0.0f;
     private float _moveTimer = 1.0f;
     private float _updatedMoveTimer = 1.0f;
 
@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         explosionEffect.transform.position = transform.position;
-        //FireBullet();
     }
 
     private void FixedUpdate()
@@ -34,10 +33,9 @@ public class Enemy : MonoBehaviour
         {
             _rb.MovePosition(new Vector2(transform.position.x + _moveSpeed, transform.position.y));
 
-            if (isDirectionFlipped)
+            if (_needsToMoveDown)
             {
-                _rb.MovePosition(new Vector2(transform.position.x, transform.position.y - 0.25f));
-                FlipDirection();
+                MoveDown();
             }
 
             _moveTimer = _updatedMoveTimer;
@@ -56,39 +54,33 @@ public class Enemy : MonoBehaviour
             explosionSound.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log($"Wall");
+            NeedsToFlipDirection = true;
+        }
+    }
+
+    private void MoveDown()
+    {
+        _rb.MovePosition(new Vector2(transform.position.x, transform.position.y - 0.25f));
+        _needsToMoveDown = false;
     }
 
     public void FireBullet()
     {
-        //_shootTimer -= Time.deltaTime;
-
-        //if (_shootTimer <= 0)
-        //{
-        //    bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
-        //    bulletSound.GetComponent<AudioSource>().Play();
-        //    Instantiate(bullet);
-        //    _shootTimer = 5.0f;
-        //}
-
         bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
         bulletSound.GetComponent<AudioSource>().Play();
         Instantiate(bullet);
     }
 
-    private void FlipDirection()
+    public void FlipDirection()
     {
+        _needsToMoveDown = true;
+        NeedsToFlipDirection = false;
+
         _moveSpeed = -_moveSpeed;
         _updatedMoveTimer -= 0.1f;
-        isDirectionFlipped = false;
-    }
-
-    public float GetMinBoundsX()
-    {
-        return GetComponent<BoxCollider2D>().bounds.min.x;
-    }
-
-    public float GetMaxBoundsX()
-    {
-        return GetComponent<BoxCollider2D>().bounds.max.x;
     }
 }
