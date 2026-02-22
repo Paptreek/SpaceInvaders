@@ -7,8 +7,10 @@ public class Enemy : MonoBehaviour
     public GameObject explosionSound;
     public ParticleSystem explosionEffect;
 
+    public bool isDirectionFlipped;
+
     private Rigidbody2D _rb;
-    private float _moveSpeed = 20.0f;
+    private float _moveSpeed = 0.25f;
     private float _shootTimer = 0.0f;
     private float _moveTimer = 1.0f;
     private float _updatedMoveTimer = 1.0f;
@@ -30,7 +32,14 @@ public class Enemy : MonoBehaviour
 
         if (_moveTimer <= 0)
         {
-            _rb.linearVelocityX = _moveSpeed;
+            _rb.MovePosition(new Vector2(transform.position.x + _moveSpeed, transform.position.y));
+
+            if (isDirectionFlipped)
+            {
+                _rb.MovePosition(new Vector2(transform.position.x, transform.position.y - 0.25f));
+                FlipDirection();
+            }
+
             _moveTimer = _updatedMoveTimer;
         }
         else
@@ -49,16 +58,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            _moveSpeed = -_moveSpeed;
-            _updatedMoveTimer -= 0.1f;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.25f, 0);
-        }
-    }
-
     private void FireBullet()
     {
         _shootTimer -= Time.deltaTime;
@@ -70,5 +69,22 @@ public class Enemy : MonoBehaviour
             Instantiate(bullet);
             _shootTimer = 5.0f;
         }
+    }
+
+    private void FlipDirection()
+    {
+        _moveSpeed = -_moveSpeed;
+        _updatedMoveTimer -= 0.1f;
+        isDirectionFlipped = false;
+    }
+
+    public float GetMinBoundsX()
+    {
+        return GetComponent<BoxCollider2D>().bounds.min.x;
+    }
+
+    public float GetMaxBoundsX()
+    {
+        return GetComponent<BoxCollider2D>().bounds.max.x;
     }
 }
