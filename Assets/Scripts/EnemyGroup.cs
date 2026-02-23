@@ -14,7 +14,7 @@ public class EnemyGroup : MonoBehaviour
         float spawnLocationX = -6;
         float spawnLocationY = 0;
 
-        for (int row = 0; row < 5; row++)
+        for (int row = 0; row < 4; row++)
         {
             for (int col = 0; col < 13; col++)
             {
