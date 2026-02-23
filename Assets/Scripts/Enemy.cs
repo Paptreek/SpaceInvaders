@@ -68,9 +68,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject, 1.0f);
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("EnemyWall"))
         {
-            Debug.Log($"Wall");
             NeedsToFlipDirection = true;
         }
     }

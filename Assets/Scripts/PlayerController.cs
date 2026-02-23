@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             bullet.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
             Instantiate(bullet);
             bulletSound.GetComponent<AudioSource>().Play();
-            _bulletTimer = 0.5f;
+            _bulletTimer = 1.0f;
         }
     }
 
