@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private float _moveTimer = 1.0f;
     private float _updatedMoveTimer = 1.0f;
 
+    public bool IsDead { get; private set; }
     public bool NeedsToFlipDirection { get; private set; }
 
     public void FlipDirection()
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
         NeedsToFlipDirection = false;
 
         _moveSpeed = -_moveSpeed;
-        _updatedMoveTimer -= 0.1f;
+        _updatedMoveTimer -= 0.05f;
     }
 
     public void FireBullet()
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+            IsDead = true;
             DestroyComponents();
             _explosionSound.GetComponent<AudioSource>().Play();
             _explosionEffect.GetComponent<ParticleSystem>().Play();

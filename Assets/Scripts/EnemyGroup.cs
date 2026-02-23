@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
@@ -11,14 +11,20 @@ public class EnemyGroup : MonoBehaviour
 
     private void Start()
     {
-        float spawnLocation = -7;
+        float spawnLocationX = -6;
+        float spawnLocationY = 0;
 
-        for (int i = 0; i < 15; i++)
+        for (int row = 0; row < 5; row++)
         {
-            GameObject tempEnemy = Instantiate(_enemy, new Vector2(spawnLocation, 0), transform.rotation);
-            _enemies.Add(tempEnemy.GetComponent<Enemy>());
+            for (int col = 0; col < 13; col++)
+            {
+                GameObject tempEnemy = Instantiate(_enemy, new Vector2(spawnLocationX, spawnLocationY), transform.rotation);
+                _enemies.Add(tempEnemy.GetComponent<Enemy>());
+                spawnLocationX += 1;
+            }
 
-            spawnLocation += 1;
+            spawnLocationX = -6;
+            spawnLocationY += 1;
         }
     }
 
@@ -31,7 +37,7 @@ public class EnemyGroup : MonoBehaviour
                 _enemies.Remove(enemy);
             }
 
-            if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
+            if (enemy != null && !enemy.GetComponent<Enemy>().IsDead && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
             {
                 for (int i = 0; i < _enemies.Count; i++)
                 {
