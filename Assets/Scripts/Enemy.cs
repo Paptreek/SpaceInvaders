@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet;
-    public GameObject bulletSound;
-    public GameObject explosionSound;
-    public ParticleSystem explosionEffect;
-
-    public bool NeedsToFlipDirection { get; private set; }
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private GameObject _bulletSound;
+    [SerializeField] private GameObject _explosionSound;
+    [SerializeField] private GameObject _explosionEffect;
 
     private Rigidbody2D _rb;
     private bool _needsToMoveDown;
@@ -15,14 +13,27 @@ public class Enemy : MonoBehaviour
     private float _moveTimer = 1.0f;
     private float _updatedMoveTimer = 1.0f;
 
+    public bool IsDead { get; private set; }
+    public bool NeedsToFlipDirection { get; private set; }
+
+    public void FlipDirection()
+    {
+        _needsToMoveDown = true;
+        NeedsToFlipDirection = false;
+
+        _moveSpeed = -_moveSpeed;
+        _updatedMoveTimer -= 0.05f;
+    }
+
+    public void FireBullet()
+    {
+        Instantiate(_bullet, new Vector2(transform.position.x, transform.position.y - 0.5f), transform.rotation);
+        _bulletSound.GetComponent<AudioSource>().Play();
+    }
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        //explosionEffect.transform.position = transform.position;
     }
 
     private void FixedUpdate()
@@ -50,39 +61,29 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            explosionEffect.transform.position = transform.position;
-
-            explosionEffect.Play();
-            explosionSound.GetComponent<AudioSource>().Play();
-            Destroy(gameObject);
+            IsDead = true;
+            DestroyComponents();
+            _explosionSound.GetComponent<AudioSource>().Play();
+            _explosionEffect.GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject, 1.0f);
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("EnemyWall"))
         {
-            Debug.Log($"Wall");
             NeedsToFlipDirection = true;
         }
+    }
+
+    private void DestroyComponents()
+    {
+        Destroy(GetComponent<Renderer>());
+        Destroy(GetComponent<BoxCollider2D>());
+        Destroy(GetComponent<Enemy>());
     }
 
     private void MoveDown()
     {
         _rb.MovePosition(new Vector2(transform.position.x, transform.position.y - 0.25f));
         _needsToMoveDown = false;
-    }
-
-    public void FireBullet()
-    {
-        bullet.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, 0);
-        bulletSound.GetComponent<AudioSource>().Play();
-        Instantiate(bullet);
-    }
-
-    public void FlipDirection()
-    {
-        _needsToMoveDown = true;
-        NeedsToFlipDirection = false;
-
-        _moveSpeed = -_moveSpeed;
-        _updatedMoveTimer -= 0.1f;
     }
 }

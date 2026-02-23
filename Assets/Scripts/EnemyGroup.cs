@@ -1,48 +1,65 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
-    private float _timer = 3.0f;
+    [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
+    [SerializeField] private GameObject _enemy;
 
-    public List<GameObject> enemies = new List<GameObject>();
+    private float _bulletTimer = 3.0f;
+
+    private void Start()
+    {
+        float spawnLocationX = -6;
+        float spawnLocationY = 0;
+
+        for (int row = 0; row < 5; row++)
+        {
+            for (int col = 0; col < 13; col++)
+            {
+                GameObject tempEnemy = Instantiate(_enemy, new Vector2(spawnLocationX, spawnLocationY), transform.rotation);
+                _enemies.Add(tempEnemy.GetComponent<Enemy>());
+                spawnLocationX += 1;
+            }
+
+            spawnLocationX = -6;
+            spawnLocationY += 1;
+        }
+    }
 
     private void Update()
     {
-        foreach (GameObject enemy in enemies.ToList())
+        foreach (Enemy enemy in _enemies.ToList())
         {
             if (enemy == null)
             {
-                enemies.Remove(enemy);
+                _enemies.Remove(enemy);
             }
 
-            if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
+            if (enemy != null && !enemy.GetComponent<Enemy>().IsDead && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
             {
-                for (int i = 0; i < enemies.Count; i++)
+                for (int i = 0; i < _enemies.Count; i++)
                 {
-                    enemies[i].GetComponent<Enemy>().FlipDirection();
+                    _enemies[i].GetComponent<Enemy>().FlipDirection();
                 }
             }
         }
 
-        RandomEnemyShoot();
+        RandomEnemyFireBullet();
     }
 
-    private void RandomEnemyShoot()
+    private void RandomEnemyFireBullet()
     {
-        _timer -= Time.deltaTime;
+        _bulletTimer -= Time.deltaTime;
 
-        int random = Random.Range(0, enemies.Count);
+        int randomEnemy = Random.Range(0, _enemies.Count);
+        float randomTimer = Random.Range(1.0f, 3.0f);
 
-        if (_timer <= 0)
+        if (_enemies.Count > 0 && _bulletTimer <= 0)
         {
-            if (enemies.Count > 0)
-            {
-                enemies[random].GetComponent<Enemy>().FireBullet();
-            }
-
-            _timer = 5.0f;
+            _enemies[randomEnemy].FireBullet();
+            _bulletTimer = randomTimer;
         }
     }
 }
