@@ -4,45 +4,56 @@ using System.Linq;
 
 public class EnemyGroup : MonoBehaviour
 {
-    private float _timer = 3.0f;
+    [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
+    [SerializeField] private GameObject _enemy;
 
-    public List<GameObject> enemies = new List<GameObject>();
+    private float _bulletTimer = 3.0f;
+
+    private void Start()
+    {
+        float spawnLocation = -7;
+
+        for (int i = 0; i < 15; i++)
+        {
+            GameObject tempEnemy = Instantiate(_enemy, new Vector2(spawnLocation, 0), transform.rotation);
+            _enemies.Add(tempEnemy.GetComponent<Enemy>());
+
+            spawnLocation += 1;
+        }
+    }
 
     private void Update()
     {
-        foreach (GameObject enemy in enemies.ToList())
+        foreach (Enemy enemy in _enemies.ToList())
         {
             if (enemy == null)
             {
-                enemies.Remove(enemy);
+                _enemies.Remove(enemy);
             }
 
             if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
             {
-                for (int i = 0; i < enemies.Count; i++)
+                for (int i = 0; i < _enemies.Count; i++)
                 {
-                    enemies[i].GetComponent<Enemy>().FlipDirection();
+                    _enemies[i].GetComponent<Enemy>().FlipDirection();
                 }
             }
         }
 
-        RandomEnemyShoot();
+        RandomEnemyFireBullet();
     }
 
-    private void RandomEnemyShoot()
+    private void RandomEnemyFireBullet()
     {
-        _timer -= Time.deltaTime;
+        _bulletTimer -= Time.deltaTime;
 
-        int random = Random.Range(0, enemies.Count);
+        int randomEnemy = Random.Range(0, _enemies.Count);
+        float randomTimer = Random.Range(1.0f, 3.0f);
 
-        if (_timer <= 0)
+        if (_enemies.Count > 0 && _bulletTimer <= 0)
         {
-            if (enemies.Count > 0)
-            {
-                enemies[random].GetComponent<Enemy>().FireBullet();
-            }
-
-            _timer = 5.0f;
+            _enemies[randomEnemy].FireBullet();
+            _bulletTimer = randomTimer;
         }
     }
 }
