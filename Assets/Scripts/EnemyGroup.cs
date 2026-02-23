@@ -12,7 +12,7 @@ public class EnemyGroup : MonoBehaviour
     private void Start()
     {
         float spawnLocationX = -6;
-        float spawnLocationY = 0;
+        float spawnLocationY = -1;
 
         for (int row = 0; row < 4; row++)
         {
