@@ -16,9 +16,9 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Barrier") || collision.CompareTag("EnemyBullet"))
-        {
+        //if (collision.CompareTag("Enemy") || collision.CompareTag("Barrier") || collision.CompareTag("EnemyBullet"))
+        //{
             Destroy(gameObject);
-        }
+        //}
     }
 }

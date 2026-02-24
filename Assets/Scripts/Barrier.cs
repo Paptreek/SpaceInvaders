@@ -3,12 +3,14 @@ using UnityEngine;
 public class Barrier : MonoBehaviour
 {
     [SerializeField] private int _hitCount = 0;
+    [SerializeField] private GameObject _explosionSound;
+    [SerializeField] private GameObject _explosionEffect;
 
     private void Update()
     {
-        if (_hitCount >= 10)
+        if (_hitCount >= 7)
         {
-            Destroy(gameObject);
+            Kill();
         }
     }
 
@@ -21,7 +23,16 @@ public class Barrier : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Kill();
         }
+    }
+
+    private void Kill()
+    {
+        _explosionEffect.transform.position = transform.position;
+
+        Destroy(gameObject);
+        _explosionSound.GetComponent<AudioSource>().Play();
+        _explosionEffect.GetComponent<ParticleSystem>().Play();
     }
 }
