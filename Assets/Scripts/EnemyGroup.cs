@@ -37,11 +37,14 @@ public class EnemyGroup : MonoBehaviour
                 _enemies.Remove(enemy);
             }
 
-            if (enemy != null && !enemy.GetComponent<Enemy>().IsDead && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
+            if (enemy != null)
             {
-                for (int i = 0; i < _enemies.Count; i++)
+                if (!enemy.GetComponent<Enemy>().IsDead && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
                 {
-                    _enemies[i].GetComponent<Enemy>().FlipDirection();
+                    for (int i = 0; i < _enemies.Count; i++)
+                    {
+                        _enemies[i].GetComponent<Enemy>().FlipDirection();
+                    }
                 }
             }
         }

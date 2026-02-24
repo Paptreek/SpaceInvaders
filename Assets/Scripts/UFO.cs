@@ -22,6 +22,7 @@ public class UFO : MonoBehaviour
         {
             _timer -= Time.deltaTime;
 
+
             if (_timer <= 0)
             {
                 Destroy(gameObject);
@@ -41,16 +42,20 @@ public class UFO : MonoBehaviour
     {
         _wasShot = true;
 
-        Renderer[] components = GetComponentsInChildren<Renderer>();
+        _moveSpeed = 0;
 
-        foreach (Renderer renderer in components)
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        for (int i = 0; i < renderers.Length; i++)
         {
-            Destroy(renderer);
+            Debug.Log(renderers[i]);
         }
+
+        Destroy(renderers[0]);
+        Destroy(renderers[1]);
 
         GetComponent<AudioSource>().Stop();
         _explosionSound.GetComponent<AudioSource>().Play();
-        _explosionEffect.transform.position = transform.position;
         _explosionEffect.GetComponent<ParticleSystem>().Play();
     }
 }
