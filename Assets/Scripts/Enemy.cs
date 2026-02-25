@@ -62,10 +62,10 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("PlayerBullet"))
         {
             IsDead = true;
-            DestroyComponents();
             _explosionSound.GetComponent<AudioSource>().Play();
             _explosionEffect.GetComponent<ParticleSystem>().Play();
-            Destroy(gameObject, 1.0f);
+            DestroyComponents();
+            Destroy(gameObject, 0.75f);
         }
 
         if (collision.CompareTag("EnemyWall"))

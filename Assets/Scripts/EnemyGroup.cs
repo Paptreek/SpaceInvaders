@@ -32,16 +32,19 @@ public class EnemyGroup : MonoBehaviour
     {
         foreach (Enemy enemy in _enemies.ToList())
         {
-            if (enemy == null || enemy.GetComponent<Enemy>().IsDead)
+            if (enemy == null)
             {
                 _enemies.Remove(enemy);
             }
-
+            
             if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
             {
                 for (int i = 0; i < _enemies.Count; i++)
                 {
-                    _enemies[i].GetComponent<Enemy>().FlipDirection();
+                    if (_enemies[i] != null)
+                    {
+                        _enemies[i].GetComponent<Enemy>().FlipDirection();
+                    }
                 }
             }
         }
