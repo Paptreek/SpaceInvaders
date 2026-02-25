@@ -12,7 +12,7 @@ public class EnemyGroup : MonoBehaviour
     private void Start()
     {
         float spawnLocationX = -6;
-        float spawnLocationY = 0;
+        float spawnLocationY = -1;
 
         for (int row = 0; row < 4; row++)
         {
@@ -32,12 +32,12 @@ public class EnemyGroup : MonoBehaviour
     {
         foreach (Enemy enemy in _enemies.ToList())
         {
-            if (enemy == null)
+            if (enemy == null || enemy.GetComponent<Enemy>().IsDead)
             {
                 _enemies.Remove(enemy);
             }
 
-            if (enemy != null && !enemy.GetComponent<Enemy>().IsDead && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
+            if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)
             {
                 for (int i = 0; i < _enemies.Count; i++)
                 {

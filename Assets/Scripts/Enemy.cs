@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBullet"))
+        if (collision.CompareTag("PlayerBullet"))
         {
             IsDead = true;
             DestroyComponents();
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject, 1.0f);
         }
 
-        if (collision.gameObject.CompareTag("EnemyWall"))
+        if (collision.CompareTag("EnemyWall"))
         {
             NeedsToFlipDirection = true;
         }
