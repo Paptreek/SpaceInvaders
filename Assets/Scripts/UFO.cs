@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class UFO : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed;
     [SerializeField] private GameObject _explosionSound;
     [SerializeField] private GameObject _explosionEffect;
 
+    private float _moveSpeed = 1.5f;
     private float _timer = 1.0f;
     private bool _wasShot;
 
@@ -46,13 +46,7 @@ public class UFO : MonoBehaviour
 
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            Debug.Log(renderers[i]);
-        }
-
         Destroy(renderers[0]);
-        Destroy(renderers[1]);
 
         GetComponent<AudioSource>().Stop();
         _explosionSound.GetComponent<AudioSource>().Play();

@@ -3,19 +3,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject bullet;
-    public GameObject bulletSound;
-    public GameObject explosionSound;
-    public ParticleSystem explosionEffect;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletSound;
+    [SerializeField] private GameObject explosionSound;
+    [SerializeField] private ParticleSystem explosionEffect;
 
     private Rigidbody2D _rb;
     private InputAction _moveAction;
-    
     private Vector2 _moveValue;
-
     private float _moveSpeed = 5;
     private float _bulletTimer;
-    
     
     void Start()
     {
@@ -31,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current.spaceKey.isPressed && _bulletTimer <= 0)
         {
-            bullet.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+            bullet.transform.position = new Vector3(transform.position.x, transform.position.y + 0.75f, 0);
             Instantiate(bullet);
             bulletSound.GetComponent<AudioSource>().Play();
             _bulletTimer = 1.0f;
