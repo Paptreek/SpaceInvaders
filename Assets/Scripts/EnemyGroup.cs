@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
-    [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
-    [SerializeField] private GameObject _enemy;
-
+    [SerializeField] private GameObject _alienLav;
+    [SerializeField] private GameObject _alienOrchid;
+    [SerializeField] private GameObject _alienTeal;
+    [SerializeField] private GameObject _alienTurq;
+    
+    private List<Enemy> _enemies = new List<Enemy>();
+    private List<GameObject> _enemyObjects = new List<GameObject>();
     private float _bulletTimer = 3.0f;
 
     private void Start()
     {
+        _enemyObjects.Add(_alienLav);
+        _enemyObjects.Add(_alienTurq);
+        _enemyObjects.Add(_alienOrchid);
+        _enemyObjects.Add(_alienTeal);
+
+        int alien = 0;
+
         float spawnLocationX = -6;
         float spawnLocationY = -1;
 
@@ -18,11 +29,12 @@ public class EnemyGroup : MonoBehaviour
         {
             for (int col = 0; col < 13; col++)
             {
-                GameObject tempEnemy = Instantiate(_enemy, new Vector2(spawnLocationX, spawnLocationY), transform.rotation);
+                GameObject tempEnemy = Instantiate(_enemyObjects[alien], new Vector2(spawnLocationX, spawnLocationY), transform.rotation);
                 _enemies.Add(tempEnemy.GetComponent<Enemy>());
                 spawnLocationX += 1;
             }
 
+            alien++;
             spawnLocationX = -6;
             spawnLocationY += 1;
         }

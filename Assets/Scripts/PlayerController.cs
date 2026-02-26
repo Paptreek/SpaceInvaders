@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private InputAction _moveAction;
     private Vector2 _moveValue;
-    private float _moveSpeed = 5;
+    private float _moveSpeed = 3.5f;
     private float _bulletTimer;
     
     void Start()

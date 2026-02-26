@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -6251682230944352461
     second: spritesheet_1
+  - first:
+      213: -1259408508766424310
+    second: spritesheet_2
+  - first:
+      213: -5962389079421231736
+    second: spritesheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,10 +125,10 @@ TextureImporter:
       name: player
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1140
-        width: 140
-        height: 120
+        x: 9
+        y: 1139
+        width: 142
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +147,10 @@ TextureImporter:
       name: ufo
       rect:
         serializedVersion: 2
-        x: 170
-        y: 1160
-        width: 140
-        height: 80
+        x: 169
+        y: 1159
+        width: 142
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +169,54 @@ TextureImporter:
       name: barrier
       rect:
         serializedVersion: 2
-        x: 380
-        y: 1160
-        width: 200
-        height: 70
+        x: 379
+        y: 1159
+        width: 202
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a037fd742aea58ee0800000000000000
+      internalID: -1259408508766424310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_turq
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1149
+        width: 102
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ddd6ce8b6514da0800000000000000
+      internalID: -5962389079421231736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_orchid
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1150
+        width: 120
+        height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +225,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 800d7fc04ceb9a448b351dfb0e1489af
-      internalID: -1363513132
+      spriteID: 72be022c2ffefc04198446b98c723eee
+      internalID: 1515275868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_lav
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1150
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c245d5a1aa75d4c82b7b7821ca0807
+      internalID: 30999344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_teal
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1150
+        width: 100
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916e2babc888a604a92b8f3ba0c7b89a
+      internalID: -284946839
       vertices: []
       indices: 
       edges: []
@@ -185,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a31e9036230ca514294fe8b7dd367fe7
+    spriteID: 000c99b5229e7e14987f11239d6a30be
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +291,11 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      barrier: -1363513132
+      alien_lav: 30999344
+      alien_orchid: 1515275868
+      alien_teal: -284946839
+      alien_turq: -5962389079421231736
+      barrier: -1259408508766424310
       player: 8020143640844766479
       ufo: -6251682230944352461
   mipmapLimitGroupName: 
