@@ -13,6 +13,8 @@ public class EnemyGroup : MonoBehaviour
     private List<GameObject> _enemyObjects = new List<GameObject>();
     private float _bulletTimer = 3.0f;
 
+    public int NumberOfEnemiesKilled { get; private set; }
+
     private void Start()
     {
         _enemyObjects.Add(_alienLav);
@@ -47,6 +49,8 @@ public class EnemyGroup : MonoBehaviour
             if (enemy == null)
             {
                 _enemies.Remove(enemy);
+                NumberOfEnemiesKilled++;
+                Debug.Log(NumberOfEnemiesKilled);
             }
             
             if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)

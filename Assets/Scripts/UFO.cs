@@ -2,54 +2,53 @@ using UnityEngine;
 
 public class UFO : MonoBehaviour
 {
-    [SerializeField] private GameObject _explosionSound;
     [SerializeField] private GameObject _explosionEffect;
+    [SerializeField] private GameObject _explosionSound;
+    [SerializeField] private GameObject _moveSound;
 
+    private Rigidbody2D _rb;
     private float _moveSpeed = 1.5f;
-    private float _timer = 1.0f;
-    private bool _wasShot;
+    private Vector3 _startingPos = new Vector3(11, 3.15f, 0);
 
-    private void Update()
+    private void Start()
     {
-        transform.Translate(new Vector3(-1, 0, 0) * _moveSpeed * Time.deltaTime);
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
-        if (transform.position.x <= -11.0f)
-        {
-            Destroy(gameObject);
-        }
-
-        if (_wasShot)
-        {
-            _timer -= Time.deltaTime;
-
-
-            if (_timer <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+    private void FixedUpdate()
+    {
+        _rb.linearVelocityX = -_moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            Kill();
+            // upon death:
+
+            // start a 1 second deathTimer to allow the effects to play
+            // disable renderer and collider
+            // stop moveSound
+            // play explosion sound and effect
+
+            // once deathTimer hits 0:
+
+            // start a 30 second spawnTimer
+            // reset position
+            // set speed to 0
+
+            // once spawnTimer hits 0:
+
+            // turn renderer and collider back on
+            // turn moveSound on
+            // set speed to 1.5f
+
+            Reset();
         }
     }
 
-    private void Kill()
+    private void Reset()
     {
-        _wasShot = true;
-
-        _moveSpeed = 0;
-
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
-
-        Destroy(renderers[0]);
-
-        GetComponent<AudioSource>().Stop();
-        _explosionSound.GetComponent<AudioSource>().Play();
-        _explosionEffect.GetComponent<ParticleSystem>().Play();
+        transform.position = _startingPos;
     }
 }
