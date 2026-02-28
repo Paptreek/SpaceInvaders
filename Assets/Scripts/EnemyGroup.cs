@@ -50,7 +50,6 @@ public class EnemyGroup : MonoBehaviour
             {
                 _enemies.Remove(enemy);
                 NumberOfEnemiesKilled++;
-                Debug.Log(NumberOfEnemiesKilled);
             }
             
             if (enemy != null && enemy.GetComponent<Enemy>().NeedsToFlipDirection)

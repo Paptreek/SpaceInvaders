@@ -11,14 +11,17 @@ public class UFO : MonoBehaviour
     private AudioSource _explosionSound;
     private ParticleSystem _explosionEffect;
 
+    private bool _isActive;
+    private bool _wasJustKilled;
+
     private float _moveSpeed = 0.0f;
     private float _deathTimer = 1.0f;
     private float _spawnTimer = 3.0f;
 
-    private bool _isActive;
-    private bool _wasJustKilled;
-
     private Vector3 _startingPos = new Vector3(11, 3.15f, 0);
+
+    public int NumberKilled { get; private set; }
+
 
     private void Start()
     {
@@ -58,8 +61,6 @@ public class UFO : MonoBehaviour
                 Deactivate();
             }
         }
-
-        Debug.Log($"Death: {_deathTimer}, Spawn: {_spawnTimer}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,6 +75,7 @@ public class UFO : MonoBehaviour
     {
         _deathTimer = 1.0f;
         _wasJustKilled = true;
+        NumberKilled++;
 
         GetComponent<Renderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;

@@ -345,6 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83225322ba8cfd848b2b23fddb54c74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
+  _enemyGroup: {fileID: 722626719}
+  _ufo: {fileID: 1555490970}
 --- !u!1 &132013337
 GameObject:
   m_ObjectHideFlags: 0
@@ -10416,6 +10418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc410f086fea2042b89f7d29a77555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _scoreObj: {fileID: 95836354}
+  _scoreText: {fileID: 1282266822}
+  _highScoreText: {fileID: 310251225}
 --- !u!1 &452588273
 GameObject:
   m_ObjectHideFlags: 0
@@ -16077,7 +16082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &722626720
 Transform:
   m_ObjectHideFlags: 0
