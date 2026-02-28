@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private GameObject bulletSound;
-    [SerializeField] private GameObject explosionSound;
-    [SerializeField] private ParticleSystem explosionEffect;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private GameObject _bulletSound;
+    [SerializeField] private GameObject _explosionSound;
+    [SerializeField] private ParticleSystem _explosionEffect;
 
     private Rigidbody2D _rb;
     private InputAction _moveAction;
@@ -22,15 +22,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        explosionEffect.transform.position = transform.position;
+        _explosionEffect.transform.position = transform.position;
         _moveValue = _moveAction.ReadValue<Vector2>();
         _bulletTimer -= Time.deltaTime;
 
         if (Keyboard.current.spaceKey.isPressed && _bulletTimer <= 0)
         {
-            bullet.transform.position = new Vector3(transform.position.x, transform.position.y + 0.75f, 0);
-            Instantiate(bullet);
-            bulletSound.GetComponent<AudioSource>().Play();
+            GameObject tempBullet = Instantiate(_bullet, new Vector2(transform.position.x, transform.position.y + 0.75f), transform.rotation);
+            _bulletSound.GetComponent<AudioSource>().Play();
             _bulletTimer = 1.0f;
         }
     }
@@ -44,8 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
-            explosionEffect.Play();
-            explosionSound.GetComponent<AudioSource>().Play();
+            _explosionEffect.Play();
+            _explosionSound.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
