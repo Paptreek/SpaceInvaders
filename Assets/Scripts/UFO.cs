@@ -16,14 +16,14 @@ public class UFO : MonoBehaviour
 
     private float _moveSpeed = 0.0f;
     private float _deathTimer = 1.0f;
-    private float _spawnTimer = 3.0f;
+    private float _spawnTimer = 10.0f;
 
     private Vector3 _startingPos = new Vector3(11, 3.15f, 0);
 
     public int NumberKilled { get; private set; }
 
 
-    private void Start()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _moveSound = _moveSoundObj.GetComponent<AudioSource>();
@@ -93,7 +93,7 @@ public class UFO : MonoBehaviour
         
         _moveSound.Stop();
 
-        _spawnTimer = 3.0f;
+        _spawnTimer = 28.0f;
         _isActive = false;
         _wasJustKilled = false;
         _moveSpeed = 0;

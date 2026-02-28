@@ -10418,6 +10418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc410f086fea2042b89f7d29a77555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _player: {fileID: 509364180}
   _scoreObj: {fileID: 95836354}
   _scoreText: {fileID: 1282266822}
   _highScoreText: {fileID: 310251225}
