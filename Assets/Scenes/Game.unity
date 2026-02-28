@@ -5177,7 +5177,7 @@ Transform:
   m_GameObject: {fileID: 132013337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -10044,7 +10044,7 @@ Transform:
   m_GameObject: {fileID: 264728674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10066,7 +10066,7 @@ GameObject:
   - component: {fileID: 310251226}
   - component: {fileID: 310251225}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10418,10 +10418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc410f086fea2042b89f7d29a77555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _player: {fileID: 509364180}
+  _playerObj: {fileID: 509364180}
   _scoreObj: {fileID: 95836354}
   _scoreText: {fileID: 1282266822}
   _highScoreText: {fileID: 310251225}
+  _livesText: {fileID: 1300588283}
 --- !u!1 &452588273
 GameObject:
   m_ObjectHideFlags: 0
@@ -15393,7 +15394,7 @@ Transform:
   m_GameObject: {fileID: 509364180}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.25, z: 0}
   m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -15732,7 +15733,7 @@ Transform:
   m_GameObject: {fileID: 547038135}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16061,7 +16062,7 @@ Transform:
   m_GameObject: {fileID: 650518668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16581,7 +16582,7 @@ GameObject:
   - component: {fileID: 1282266823}
   - component: {fileID: 1282266822}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16718,7 +16719,7 @@ GameObject:
   - component: {fileID: 1300588284}
   - component: {fileID: 1300588283}
   m_Layer: 5
-  m_Name: Lives
+  m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
