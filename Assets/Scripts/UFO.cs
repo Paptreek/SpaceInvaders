@@ -2,17 +2,30 @@ using UnityEngine;
 
 public class UFO : MonoBehaviour
 {
-    [SerializeField] private GameObject _explosionEffect;
-    [SerializeField] private GameObject _explosionSound;
-    [SerializeField] private GameObject _moveSound;
+    [SerializeField] private GameObject _explosionEffectObj;
+    [SerializeField] private GameObject _explosionSoundObj;
+    [SerializeField] private GameObject _moveSoundObj;
 
     private Rigidbody2D _rb;
-    private float _moveSpeed = 1.5f;
+    private AudioSource _moveSound;
+    private AudioSource _explosionSound;
+    private ParticleSystem _explosionEffect;
+
+    private float _moveSpeed = 0.0f;
+    private float _deathTimer = 1.0f;
+    private float _spawnTimer = 3.0f;
+
+    private bool _isActive;
+    private bool _wasJustKilled;
+
     private Vector3 _startingPos = new Vector3(11, 3.15f, 0);
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _moveSound = _moveSoundObj.GetComponent<AudioSource>();
+        _explosionSound = _explosionSoundObj.GetComponent<AudioSource>();
+        _explosionEffect = _explosionEffectObj.GetComponent<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -20,35 +33,78 @@ public class UFO : MonoBehaviour
         _rb.linearVelocityX = -_moveSpeed;
     }
 
+    private void Update()
+    {
+        _spawnTimer -= Time.deltaTime;
+
+        _explosionEffectObj.transform.position = transform.position;
+
+        if (_spawnTimer <= 0 && !_isActive)
+        {
+            Activate();
+        }
+
+        if (transform.position.x <= -11.0f)
+        {
+            Deactivate();
+        }
+
+        if (_wasJustKilled)
+        {
+            _deathTimer -= Time.deltaTime;
+
+            if (_deathTimer <= 0)
+            {
+                Deactivate();
+            }
+        }
+
+        Debug.Log($"Death: {_deathTimer}, Spawn: {_spawnTimer}");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            // upon death:
-
-            // start a 1 second deathTimer to allow the effects to play
-            // disable renderer and collider
-            // stop moveSound
-            // play explosion sound and effect
-
-            // once deathTimer hits 0:
-
-            // start a 30 second spawnTimer
-            // reset position
-            // set speed to 0
-
-            // once spawnTimer hits 0:
-
-            // turn renderer and collider back on
-            // turn moveSound on
-            // set speed to 1.5f
-
-            Reset();
+            Kill();
         }
     }
 
-    private void Reset()
+    private void Kill()
+    {
+        _deathTimer = 1.0f;
+        _wasJustKilled = true;
+
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        _moveSound.Stop();
+        _explosionSound.Play();
+        _explosionEffect.Play();
+        
+        _moveSpeed = 0;
+    }
+
+    private void Deactivate()
     {
         transform.position = _startingPos;
+        
+        _moveSound.Stop();
+
+        _spawnTimer = 3.0f;
+        _isActive = false;
+        _wasJustKilled = false;
+        _moveSpeed = 0;
+    }
+
+    private void Activate()
+    {
+        GetComponent<Renderer>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
+
+        _moveSound.Play();
+
+        _isActive = true;
+        _moveSpeed = 1.5f;
     }
 }
