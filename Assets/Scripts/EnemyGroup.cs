@@ -15,6 +15,11 @@ public class EnemyGroup : MonoBehaviour
 
     public int NumberOfEnemiesKilled { get; private set; }
 
+    public int GetEnemyCount()
+    {
+        return _enemies.Count;
+    }
+
     private void Start()
     {
         _enemyObjects.Add(_alienLav);
