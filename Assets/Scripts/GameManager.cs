@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _enemyGroupObj;
     [SerializeField] private GameObject _playerObj;
     [SerializeField] private GameObject _scoreObj;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _highScoreText;
     [SerializeField] private TMP_Text _livesText;
 
+    private EnemyGroup _enemyGroup;
     private PlayerController _player;
 
     private int _currentScore;
 
     private void Awake()
     {
+        _enemyGroup = _enemyGroupObj.GetComponent<EnemyGroup>();
         _player = _playerObj.GetComponent<PlayerController>();
     }
 
@@ -52,6 +55,11 @@ public class GameManager : MonoBehaviour
         if (_player.LivesRemaining <= 0)
         {
             Debug.Log($"Game Over!");
+        }
+
+        if (_enemyGroup.GetEnemyCount() <= 0)
+        {
+            Debug.Log($"You Win!");
         }
     }
 }

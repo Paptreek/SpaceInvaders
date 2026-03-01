@@ -8,7 +8,7 @@ public class Barrier : MonoBehaviour
 
     private void Update()
     {
-        if (_hitCount >= 7)
+        if (_hitCount >= 5)
         {
             Kill();
         }
