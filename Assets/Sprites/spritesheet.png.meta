@@ -275,6 +275,182 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: play_dark
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1020
+        width: 210
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a968eb3cca551654f94883c73fcefb6f
+      internalID: -670858538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play_light
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 910
+        width: 210
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe004ab6e11bea4981e3461d537102d
+      internalID: 697072321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: options_dark
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1020
+        width: 340
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b36de64b265c2b40ac148f080af0dc0
+      internalID: -1674570956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit_dark
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1020
+        width: 190
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916f106b09f53ba40b67a779840e9ed0
+      internalID: 2081315365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mute_dark
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1020
+        width: 230
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5058c234d19e1a6419d16f0f8ec671bf
+      internalID: -1169533711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: options_light
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 910
+        width: 340
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa17df316c316e545810688160d1d5ab
+      internalID: 1037248219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit_light
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 910
+        width: 190
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9268e1dc2fc1a354eb5dc000fa625327
+      internalID: 1025817198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mute_light
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 910
+        width: 230
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd59b9fc3ef6c1543a030af1d5a11a91
+      internalID: 1880926368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -296,7 +472,15 @@ TextureImporter:
       alien_teal: -284946839
       alien_turq: -5962389079421231736
       barrier: -1259408508766424310
+      mute_dark: -1169533711
+      mute_light: 1880926368
+      options_dark: -1674570956
+      options_light: 1037248219
+      play_dark: -670858538
+      play_light: 697072321
       player: 8020143640844766479
+      quit_dark: 2081315365
+      quit_light: 1025817198
       ufo: -6251682230944352461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
