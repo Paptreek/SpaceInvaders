@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Title : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private Button _playButton;
+    [SerializeField] private GameObject _pauseMenu;
+
+    [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _optionsButton;
     [SerializeField] private Button _quitButton;
 
@@ -12,14 +14,9 @@ public class Title : MonoBehaviour
     [SerializeField] private Button _unmuteButton;
     [SerializeField] private Button _backButton;
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Game");
-    }
-
     public void OnOptionsClicked()
     {
-        _playButton.gameObject.SetActive(false);
+        _resumeButton.gameObject.SetActive(false);
         _optionsButton.gameObject.SetActive(false);
         _quitButton.gameObject.SetActive(false);
 
@@ -39,11 +36,11 @@ public class Title : MonoBehaviour
 
     public void OnBackClicked()
     {
-        _playButton.gameObject.SetActive(true);
+        _resumeButton.gameObject.SetActive(true);
         _optionsButton.gameObject.SetActive(true);
         _quitButton.gameObject.SetActive(true);
 
-        _playButton.Select();
+        _resumeButton.Select();
 
         _muteButton.gameObject.SetActive(false);
         _unmuteButton.gameObject.SetActive(false);
@@ -54,22 +51,44 @@ public class Title : MonoBehaviour
     {
         if (AudioListener.volume == 1)
         {
+            _muteButton.gameObject.SetActive(false);
             _unmuteButton.gameObject.SetActive(true);
             _unmuteButton.Select();
-            _muteButton.gameObject.SetActive(false);
             AudioListener.volume = 0;
         }
         else
         {
-            _muteButton.gameObject.SetActive(true);
-            _muteButton.Select();
             _unmuteButton.gameObject.SetActive(false);
+            _muteButton.Select();
+            _muteButton.gameObject.SetActive(true);
             AudioListener.volume = 1;
         }
     }
 
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("Title");
+
+        if (Time.timeScale < 1)
+        {
+            Time.timeScale = 1;
+        }
+
+        if (AudioListener.pause == true)
+        {
+            AudioListener.pause = false;
+        }
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        _pauseMenu.SetActive(false);
+    }
+
     private void Awake()
     {
-        _playButton.Select();
+        _resumeButton.Select();
     }
 }

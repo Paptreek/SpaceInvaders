@@ -1,8 +1,10 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _pauseMenuObj;
     [SerializeField] private GameObject _enemyGroupObj;
     [SerializeField] private GameObject _playerObj;
     [SerializeField] private GameObject _scoreObj;
@@ -23,6 +25,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            AudioListener.pause = true;
+            Time.timeScale = 0;
+            _pauseMenuObj.SetActive(true);
+        }
+
         _currentScore = _scoreObj.GetComponent<Score>().CurrentScore;
         _scoreText.text = $"Score: {_currentScore:0000}";
 

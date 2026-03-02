@@ -583,6 +583,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pause_bg
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 280
+        width: 400
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9013d9b3b61034ca57e012cd9a4683
+      internalID: -1971257406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -610,6 +632,7 @@ TextureImporter:
       mute_light: 1880926368
       options_dark: -1674570956
       options_light: 1037248219
+      pause_bg: -1971257406
       play_dark: -670858538
       play_light: 697072321
       player: 8020143640844766479
