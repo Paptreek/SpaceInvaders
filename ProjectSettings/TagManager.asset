@@ -11,6 +11,7 @@ TagManager:
   - EnemyWall
   - Barrier
   - UFO
+  - Floor
   layers:
   - Default
   - TransparentFX

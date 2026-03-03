@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _gameAudio;
 
     [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _optionsButton;
@@ -13,6 +14,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Button _muteButton;
     [SerializeField] private Button _unmuteButton;
     [SerializeField] private Button _backButton;
+
+    private float _timer = 0.25f;
+
+    public bool HasQuit { get; set; }
 
     public void OnOptionsClicked()
     {
@@ -23,12 +28,12 @@ public class PauseMenu : MonoBehaviour
         if (AudioListener.volume == 1)
         {
             _muteButton.gameObject.SetActive(true);
-            _muteButton.Select();
+            //_muteButton.Select();
         }
         else
         {
             _unmuteButton.gameObject.SetActive(true);
-            _unmuteButton.Select();
+            //_unmuteButton.Select();
         }
 
         _backButton.gameObject.SetActive(true);
@@ -40,7 +45,7 @@ public class PauseMenu : MonoBehaviour
         _optionsButton.gameObject.SetActive(true);
         _quitButton.gameObject.SetActive(true);
 
-        _resumeButton.Select();
+        //_resumeButton.Select();
 
         _muteButton.gameObject.SetActive(false);
         _unmuteButton.gameObject.SetActive(false);
@@ -53,19 +58,46 @@ public class PauseMenu : MonoBehaviour
         {
             _muteButton.gameObject.SetActive(false);
             _unmuteButton.gameObject.SetActive(true);
-            _unmuteButton.Select();
+            //_unmuteButton.Select();
             AudioListener.volume = 0;
         }
         else
         {
             _unmuteButton.gameObject.SetActive(false);
-            _muteButton.Select();
+            //_muteButton.Select();
             _muteButton.gameObject.SetActive(true);
             AudioListener.volume = 1;
         }
     }
 
-    public void QuitGame()
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        UnpauseGameAudio();
+        _pauseMenu.SetActive(false);
+    }
+
+    public void PauseGameAudio()
+    {
+        AudioSource[] audioSources = _gameAudio.GetComponentsInChildren<AudioSource>();
+
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    private void UnpauseGameAudio()
+    {
+        AudioSource[] audioSources = _gameAudio.GetComponentsInChildren<AudioSource>();
+
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.UnPause();
+        }
+    }
+
+    private void QuitGame()
     {
         SceneManager.LoadScene("Title");
 
@@ -80,15 +112,16 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void ResumeGame()
+    private void Update()
     {
-        Time.timeScale = 1;
-        AudioListener.pause = false;
-        _pauseMenu.SetActive(false);
-    }
+        if (HasQuit)
+        {
+            _timer -= Time.unscaledDeltaTime;
 
-    private void Awake()
-    {
-        _resumeButton.Select();
+            if (_timer <= 0)
+            {
+                QuitGame();
+            }
+        }
     }
 }

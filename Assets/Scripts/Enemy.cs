@@ -31,25 +31,30 @@ public class Enemy : MonoBehaviour
         _bulletSound.GetComponent<AudioSource>().Play();
     }
 
+    public float GetMoveTimer()
+    {
+        return _updatedMoveTimer;
+    }
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         _moveTimer -= Time.deltaTime;
 
         if (_moveTimer <= 0)
         {
+            _moveTimer = _updatedMoveTimer;
+
             _rb.MovePosition(new Vector2(transform.position.x + _moveSpeed, transform.position.y));
 
             if (_needsToMoveDown)
             {
                 MoveDown();
             }
-
-            _moveTimer = _updatedMoveTimer;
         }
         else
         {
@@ -71,6 +76,11 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("EnemyWall"))
         {
             NeedsToFlipDirection = true;
+        }
+
+        if (collision.CompareTag("Floor"))
+        {
+            // Game Over
         }
     }
 

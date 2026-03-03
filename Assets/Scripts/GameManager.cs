@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenuObj;
+    [SerializeField] private GameObject _pauseManagerObj;
     [SerializeField] private GameObject _enemyGroupObj;
     [SerializeField] private GameObject _playerObj;
     [SerializeField] private GameObject _scoreObj;
+    [SerializeField] private GameObject _gameAudio;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _highScoreText;
     [SerializeField] private TMP_Text _livesText;
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            AudioListener.pause = true;
+            _pauseManagerObj.GetComponent<PauseMenu>().PauseGameAudio();
             Time.timeScale = 0;
             _pauseMenuObj.SetActive(true);
         }
