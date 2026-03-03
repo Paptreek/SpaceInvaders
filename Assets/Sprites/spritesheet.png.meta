@@ -125,19 +125,19 @@ TextureImporter:
       name: player
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1139
-        width: 142
-        height: 122
+        x: 10
+        y: 2420
+        width: 140
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f0d092816264d4f60800000000000000
+      spriteID: 6970293fbf4126d45ba46ec7b20f328c
       internalID: 8020143640844766479
       vertices: []
       indices: 
@@ -147,19 +147,19 @@ TextureImporter:
       name: ufo
       rect:
         serializedVersion: 2
-        x: 169
-        y: 1159
-        width: 142
-        height: 82
+        x: 170
+        y: 2440
+        width: 140
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 337b0ff32209d39a0800000000000000
+      spriteID: 99cfeca4a1cfc964b96672f3b6444d36
       internalID: -6251682230944352461
       vertices: []
       indices: 
@@ -169,19 +169,19 @@ TextureImporter:
       name: barrier
       rect:
         serializedVersion: 2
-        x: 379
-        y: 1159
-        width: 202
-        height: 72
+        x: 380
+        y: 2440
+        width: 200
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a037fd742aea58ee0800000000000000
+      spriteID: 1316bda0f98723e408c153eddf15830b
       internalID: -1259408508766424310
       vertices: []
       indices: 
@@ -191,74 +191,8 @@ TextureImporter:
       name: alien_turq
       rect:
         serializedVersion: 2
-        x: 669
-        y: 1149
-        width: 102
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88ddd6ce8b6514da0800000000000000
-      internalID: -5962389079421231736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien_orchid
-      rect:
-        serializedVersion: 2
-        x: 820
-        y: 1150
-        width: 120
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72be022c2ffefc04198446b98c723eee
-      internalID: 1515275868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien_lav
-      rect:
-        serializedVersion: 2
-        x: 980
-        y: 1150
-        width: 120
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43c245d5a1aa75d4c82b7b7821ca0807
-      internalID: 30999344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien_teal
-      rect:
-        serializedVersion: 2
-        x: 1150
-        y: 1150
+        x: 670
+        y: 2430
         width: 100
         height: 90
       alignment: 0
@@ -269,18 +203,84 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 916e2babc888a604a92b8f3ba0c7b89a
+      spriteID: 94458f91160fcf64d9daf75c38557103
+      internalID: -5962389079421231736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_orchid
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 2430
+        width: 120
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a3ee8ecad21e345b662c6300d51aec
+      internalID: 1515275868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_lav
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2430
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6ee8671d9c775428cc81eff0a4e775
+      internalID: 30999344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien_teal
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 2430
+        width: 100
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95bf5e1266c4a843aae1bef267077a9
       internalID: -284946839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: play_dark
+      name: button_play_dark
       rect:
         serializedVersion: 2
         x: 10
-        y: 1020
+        y: 2300
         width: 210
         height: 90
       alignment: 0
@@ -291,18 +291,84 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a968eb3cca551654f94883c73fcefb6f
-      internalID: -670858538
+      spriteID: 866ae4353ee4a9f4894ee680134ddfba
+      internalID: -659131910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: play_light
+      name: button_opt_dark
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 2300
+        width: 340
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f492bf6437a96ac4dbbbb39bd2a9f526
+      internalID: 484481668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_quit_dark
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2300
+        width: 190
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be1760acd56ced43adddba332d2339e
+      internalID: -1445325439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_mute_dark
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 2300
+        width: 230
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b663139d02337498fdc1449e42728d
+      internalID: -1415053722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_play_light
       rect:
         serializedVersion: 2
         x: 10
-        y: 910
+        y: 2190
         width: 210
         height: 90
       alignment: 0
@@ -313,18 +379,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe004ab6e11bea4981e3461d537102d
-      internalID: 697072321
+      spriteID: ee83ddf98d0069544b0b6e05448e2d26
+      internalID: 892520606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: options_dark
+      name: button_opt_light
       rect:
         serializedVersion: 2
         x: 240
-        y: 1020
+        y: 2190
         width: 340
         height: 90
       alignment: 0
@@ -335,18 +401,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b36de64b265c2b40ac148f080af0dc0
-      internalID: -1674570956
+      spriteID: d2c36cdfa08e4e641b751399450dab78
+      internalID: -1397854326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quit_dark
+      name: button_quit_light
       rect:
         serializedVersion: 2
         x: 600
-        y: 1020
+        y: 2190
         width: 190
         height: 90
       alignment: 0
@@ -357,18 +423,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 916f106b09f53ba40b67a779840e9ed0
-      internalID: 2081315365
+      spriteID: c494f64f1096c6c41bfe658f815d46a0
+      internalID: 943252336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mute_dark
+      name: button_mute_light
       rect:
         serializedVersion: 2
         x: 810
-        y: 1020
+        y: 2190
         width: 230
         height: 90
       alignment: 0
@@ -379,84 +445,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5058c234d19e1a6419d16f0f8ec671bf
-      internalID: -1169533711
+      spriteID: cb526c38ed6ac314da51f658b18ecdff
+      internalID: 715121984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: options_light
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 910
-        width: 340
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa17df316c316e545810688160d1d5ab
-      internalID: 1037248219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quit_light
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 910
-        width: 190
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9268e1dc2fc1a354eb5dc000fa625327
-      internalID: 1025817198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mute_light
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 910
-        width: 230
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd59b9fc3ef6c1543a030af1d5a11a91
-      internalID: 1880926368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: back_dark
+      name: button_back_dark
       rect:
         serializedVersion: 2
         x: 10
-        y: 800
+        y: 2080
         width: 230
         height: 90
       alignment: 0
@@ -467,18 +467,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 861847aa17f11af4f927e375a80b6bf3
-      internalID: -1905013192
+      spriteID: 3c2b5b249cbf52349915465ce51f35e6
+      internalID: -315610403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: resume_dark
+      name: button_rsm_dark
       rect:
         serializedVersion: 2
         x: 270
-        y: 800
+        y: 2080
         width: 340
         height: 90
       alignment: 0
@@ -489,84 +489,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a1f188226650b4ca1bc48819ed18c2
-      internalID: 549802134
+      spriteID: 613be45346aa34d4cb525806c639733a
+      internalID: -499799462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: back_light
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 690
-        width: 230
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97477e817b7344549831f27b7d4531bb
-      internalID: 158260560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: resume_light
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 690
-        width: 340
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c9c681bc5ae75f498b8d489a64397e0
-      internalID: -915880018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: unmute_dark
-      rect:
-        serializedVersion: 2
-        x: 629
-        y: 800
-        width: 330
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7441432be4cf67848b521369c39bcf9f
-      internalID: -863881239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: unmute_light
+      name: button_unmute_dark
       rect:
         serializedVersion: 2
         x: 630
-        y: 690
+        y: 2080
         width: 330
         height: 90
       alignment: 0
@@ -577,8 +511,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6108eabf77445d14fa84e7d70f1b3c8c
-      internalID: 1887061186
+      spriteID: 845fb75dce2bbf84f9573f0f5a90b867
+      internalID: 1243321290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_back_light
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1970
+        width: 230
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde8f33b8861fc0409bb6a9f82328489
+      internalID: 2098827755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_rsm_light
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1970
+        width: 340
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c59d15fca8b7343837939b170abb67
+      internalID: 1160483331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_unmute_light
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1970
+        width: 330
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466e98650b5e9e44ab4095b343d018bf
+      internalID: -463070686
       vertices: []
       indices: 
       edges: []
@@ -588,7 +588,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 10
-        y: 280
+        y: 1560
         width: 400
         height: 390
       alignment: 0
@@ -599,8 +599,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db9013d9b3b61034ca57e012cd9a4683
+      spriteID: cb92c34de6387c4488a7775a10d42d2c
       internalID: -1971257406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_rest_dark
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1860
+        width: 360
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339f45a5ac04e814597a1d7b1cfd508d
+      internalID: -1432509699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_rest_light
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1750
+        width: 360
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b871296c54a594dac44e65a41c12bd
+      internalID: 964354753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over_bg
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1330
+        width: 820
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e470fbfe1e3f84d938cfe5ccb79ebd
+      internalID: -1780244756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text_game_over
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1220
+        width: 740
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7f8865da1821e43834099d5c114b4c
+      internalID: -1835638966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text_victory
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1100
+        width: 540
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76abb7e7d5b7c140b609553c80fa963
+      internalID: 1820128081
       vertices: []
       indices: 
       edges: []
@@ -619,30 +729,42 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       alien_lav: 30999344
       alien_orchid: 1515275868
       alien_teal: -284946839
       alien_turq: -5962389079421231736
-      back_dark: -1905013192
-      back_light: 158260560
       barrier: -1259408508766424310
-      mute_dark: -1169533711
-      mute_light: 1880926368
-      options_dark: -1674570956
-      options_light: 1037248219
+      button_back_dark: -315610403
+      button_back_light: 2098827755
+      button_mute_dark: -1415053722
+      button_mute_light: 715121984
+      button_opt_dark: 484481668
+      button_opt_light: -1397854326
+      button_play_dark: -659131910
+      button_play_light: 892520606
+      button_quit_dark: -1445325439
+      button_quit_light: 943252336
+      button_rest_dark: -1432509699
+      button_rest_light: 964354753
+      button_rsm_dark: -499799462
+      button_rsm_light: 1160483331
+      button_unmute_dark: 1243321290
+      button_unmute_light: -463070686
+      game_over_bg: -1780244756
       pause_bg: -1971257406
-      play_dark: -670858538
-      play_light: 697072321
       player: 8020143640844766479
-      quit_dark: 2081315365
-      quit_light: 1025817198
-      resume_dark: 549802134
-      resume_light: -915880018
+      spritesheet_26: -512964794
+      spritesheet_27: 919490601
+      spritesheet_28: -983610109
+      spritesheet_29: -273111727
+      spritesheet_30: 133028172
+      spritesheet_31: 1943175928
+      spritesheet_32: -1842832959
+      text_game_over: -1835638966
+      text_victory: 1820128081
       ufo: -6251682230944352461
-      unmute_dark: -863881239
-      unmute_light: 1887061186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
