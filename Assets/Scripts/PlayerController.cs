@@ -71,11 +71,25 @@ public class PlayerController : MonoBehaviour
             GetComponent<Renderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _isDead = true;
+            LivesRemaining = 0;
+
+            _moveSpeed = 0;
+
+            _explosionEffect.Play();
+            _explosionSound.GetComponent<AudioSource>().Play();
+
+            GetComponent<Renderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     private void Respawn()
     {
-        if (_isDead && _respawnTimer <= 0)
+        if (_isDead && _respawnTimer <= 0 && LivesRemaining > 0)
         {
             _isDead = false;
 

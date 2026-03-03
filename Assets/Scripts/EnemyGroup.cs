@@ -8,10 +8,16 @@ public class EnemyGroup : MonoBehaviour
     [SerializeField] private GameObject _alienOrchid;
     [SerializeField] private GameObject _alienTeal;
     [SerializeField] private GameObject _alienTurq;
+
+    [SerializeField] private GameObject _enemyMoveSoundHigh;
+    [SerializeField] private GameObject _enemyMoveSoundLow;
     
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _enemyObjects = new List<GameObject>();
     private float _bulletTimer = 3.0f;
+    private float _enemyMoveTimer = 1.0f;
+    private float _moveSoundTimer = 0;
+    private AudioSource _moveSound;
 
     public int NumberOfEnemiesKilled { get; private set; }
 
@@ -22,6 +28,8 @@ public class EnemyGroup : MonoBehaviour
 
     private void Start()
     {
+        _moveSound = _enemyMoveSoundHigh.GetComponent<AudioSource>();
+
         _enemyObjects.Add(_alienLav);
         _enemyObjects.Add(_alienTurq);
         _enemyObjects.Add(_alienOrchid);
@@ -31,6 +39,7 @@ public class EnemyGroup : MonoBehaviour
 
         float spawnLocationX = -6;
         float spawnLocationY = -1;
+        //float spawnLocationY = -4; // testing
 
         for (int row = 0; row < 4; row++)
         {
@@ -67,9 +76,26 @@ public class EnemyGroup : MonoBehaviour
                     }
                 }
             }
+
+            //_enemyMoveTimer = enemy.GetMoveTimer();
         }
 
+        _moveSoundTimer += Time.deltaTime;
+
+        if (_moveSoundTimer >= _enemyMoveTimer)
+        {
+            PlayMoveSound();
+        }
+        
         RandomEnemyFireBullet();
+    }
+
+    private void FixedUpdate()
+    {
+        foreach (Enemy enemy in _enemies.ToList())
+        {
+            _enemyMoveTimer = enemy.GetMoveTimer();
+        }
     }
 
     private void RandomEnemyFireBullet()
@@ -84,5 +110,17 @@ public class EnemyGroup : MonoBehaviour
             _enemies[randomEnemy].FireBullet();
             _bulletTimer = randomTimer;
         }
+    }
+
+    private void PlayMoveSound()
+    {
+        AudioSource highSound = _enemyMoveSoundHigh.GetComponent<AudioSource>();
+        AudioSource lowSound = _enemyMoveSoundLow.GetComponent<AudioSource>();
+
+        _moveSound = _moveSound == lowSound ? highSound : lowSound;
+
+        _moveSound.Play();
+
+        _moveSoundTimer = 0;
     }
 }
