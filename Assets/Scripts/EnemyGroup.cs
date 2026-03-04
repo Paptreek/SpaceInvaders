@@ -20,6 +20,7 @@ public class EnemyGroup : MonoBehaviour
     private AudioSource _moveSound;
 
     public int NumberOfEnemiesKilled { get; private set; }
+    public bool EnemyHasTouchedFloor { get; private set; }
 
     public int GetEnemyCount()
     {
@@ -39,7 +40,6 @@ public class EnemyGroup : MonoBehaviour
 
         float spawnLocationX = -6;
         float spawnLocationY = -1;
-        //float spawnLocationY = -4; // testing
 
         for (int row = 0; row < 4; row++)
         {
@@ -77,7 +77,16 @@ public class EnemyGroup : MonoBehaviour
                 }
             }
 
-            //_enemyMoveTimer = enemy.GetMoveTimer();
+            if (enemy.HasTouchedFloor)
+            {
+                EnemyHasTouchedFloor = true;
+
+                for (int i = 0; i < _enemies.Count; i++)
+                {
+                    _enemies[i].SetMoveSpeedToZero();
+                    _moveSound.Stop();
+                }
+            }
         }
 
         _moveSoundTimer += Time.deltaTime;

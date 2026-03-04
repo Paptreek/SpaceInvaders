@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckForGameOver()
     {
-        if (_player.LivesRemaining <= 0)
+        if (_player.LivesRemaining <= 0 || _enemyGroup.EnemyHasTouchedFloor)
         {
             _gameOverPanelObj.gameObject.SetActive(true);
             _gameOverTextObj.gameObject.SetActive(true);
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         {
             _gameOverPanelObj.gameObject.SetActive(true);
             _victoryTextObj.gameObject.SetActive(true);
+            _playerObj.SetActive(false);
         }
     }
 }
