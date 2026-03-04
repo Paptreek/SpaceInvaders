@@ -1,15 +1,21 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenuObj;
-    [SerializeField] private GameObject _pauseManagerObj;
+    [SerializeField] private GameObject _uiManagerObj;
+    [SerializeField] private GameObject _gameOverPanelObj;
     [SerializeField] private GameObject _enemyGroupObj;
     [SerializeField] private GameObject _playerObj;
     [SerializeField] private GameObject _scoreObj;
     [SerializeField] private GameObject _gameAudio;
+
+    [SerializeField] private GameObject _victoryTextObj;
+    [SerializeField] private GameObject _gameOverTextObj;
+
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _highScoreText;
     [SerializeField] private TMP_Text _livesText;
@@ -29,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            _pauseManagerObj.GetComponent<PauseMenu>().PauseGameAudio();
+            _uiManagerObj.GetComponent<uiManager>().PauseGameAudio();
             Time.timeScale = 0;
             _pauseMenuObj.SetActive(true);
         }
@@ -63,14 +69,17 @@ public class GameManager : MonoBehaviour
 
     private void CheckForGameOver()
     {
-        if (_player.LivesRemaining <= 0)
+        if (_player.LivesRemaining <= 0 || _enemyGroup.EnemyHasTouchedFloor)
         {
-            Debug.Log($"Game Over!");
+            _gameOverPanelObj.gameObject.SetActive(true);
+            _gameOverTextObj.gameObject.SetActive(true);
         }
 
         if (_enemyGroup.GetEnemyCount() <= 0)
         {
-            Debug.Log($"You Win!");
+            _gameOverPanelObj.gameObject.SetActive(true);
+            _victoryTextObj.gameObject.SetActive(true);
+            _playerObj.SetActive(false);
         }
     }
 }

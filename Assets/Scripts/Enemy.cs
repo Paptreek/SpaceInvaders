@@ -14,7 +14,13 @@ public class Enemy : MonoBehaviour
     private float _updatedMoveTimer = 1.0f;
 
     public bool IsDead { get; private set; }
+    public bool HasTouchedFloor { get; private set; }
     public bool NeedsToFlipDirection { get; private set; }
+
+    public void SetMoveSpeedToZero()
+    {
+        _moveSpeed = 0;
+    }
 
     public void FlipDirection()
     {
@@ -66,11 +72,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            IsDead = true;
-            _explosionSound.GetComponent<AudioSource>().Play();
-            _explosionEffect.GetComponent<ParticleSystem>().Play();
-            DestroyComponents();
-            Destroy(gameObject, 0.75f);
+            Kill();
         }
 
         if (collision.CompareTag("EnemyWall"))
@@ -80,8 +82,17 @@ public class Enemy : MonoBehaviour
 
         if (collision.CompareTag("Floor"))
         {
-            // Game Over
+            HasTouchedFloor = true;
         }
+    }
+
+    private void Kill()
+    {
+        IsDead = true;
+        _explosionSound.GetComponent<AudioSource>().Play();
+        _explosionEffect.GetComponent<ParticleSystem>().Play();
+        DestroyComponents();
+        Destroy(gameObject, 0.75f);
     }
 
     private void DestroyComponents()

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class uiManager : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameAudio;
@@ -28,12 +28,10 @@ public class PauseMenu : MonoBehaviour
         if (AudioListener.volume == 1)
         {
             _muteButton.gameObject.SetActive(true);
-            //_muteButton.Select();
         }
         else
         {
             _unmuteButton.gameObject.SetActive(true);
-            //_unmuteButton.Select();
         }
 
         _backButton.gameObject.SetActive(true);
@@ -44,8 +42,6 @@ public class PauseMenu : MonoBehaviour
         _resumeButton.gameObject.SetActive(true);
         _optionsButton.gameObject.SetActive(true);
         _quitButton.gameObject.SetActive(true);
-
-        //_resumeButton.Select();
 
         _muteButton.gameObject.SetActive(false);
         _unmuteButton.gameObject.SetActive(false);
@@ -58,13 +54,11 @@ public class PauseMenu : MonoBehaviour
         {
             _muteButton.gameObject.SetActive(false);
             _unmuteButton.gameObject.SetActive(true);
-            //_unmuteButton.Select();
             AudioListener.volume = 0;
         }
         else
         {
             _unmuteButton.gameObject.SetActive(false);
-            //_muteButton.Select();
             _muteButton.gameObject.SetActive(true);
             AudioListener.volume = 1;
         }
@@ -85,6 +79,11 @@ public class PauseMenu : MonoBehaviour
         {
             audioSource.Pause();
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Game");
     }
 
     private void UnpauseGameAudio()
