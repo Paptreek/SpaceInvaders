@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _bullet;
     [SerializeField] private GameObject _bulletSound;
     [SerializeField] private GameObject _explosionSound;
+    [SerializeField] private GameObject _laserObj;
     [SerializeField] private ParticleSystem _explosionEffect;
 
     private Rigidbody2D _rb;
@@ -17,7 +18,9 @@ public class PlayerController : MonoBehaviour
     private float _moveSpeed = 3.5f;
     private float _bulletTimer;
     private float _respawnTimer = 1.0f;
+    private float _laserTimer = 0.1f;
     private bool _isDead;
+    private bool _hasLaser;
 
     public int LivesRemaining { get; private set; } = 3;
     
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
         _explosionEffect.transform.position = transform.position;
         _moveValue = _moveAction.ReadValue<Vector2>();
         _bulletTimer -= Time.deltaTime;
+        _laserTimer -= Time.deltaTime;
 
         if (_isDead)
         {
@@ -45,9 +49,32 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current.spaceKey.isPressed && _bulletTimer <= 0 && !_isDead)
         {
-            GameObject tempBullet = Instantiate(_bullet, new Vector2(transform.position.x, transform.position.y + 0.75f), transform.rotation);
-            _bulletSound.GetComponent<AudioSource>().Play();
+            if (_hasLaser)
+            {
+                Debug.Log("Fire Laser!");
+                _hasLaser = false;
+                _laserTimer = 0.1f;
+
+                if (_laserTimer >= 0)
+                {
+                    _laserObj.SetActive(true);
+                }
+                
+                // turn laser to active for 0.1 seconds
+                // player laser sound
+            }
+            else
+            {
+                GameObject tempBullet = Instantiate(_bullet, new Vector2(transform.position.x, transform.position.y + 0.75f), transform.rotation);
+                _bulletSound.GetComponent<AudioSource>().Play();
+            }
+
             _bulletTimer = 1.0f;
+        }
+
+        if (_laserTimer <= 0)
+        {
+            _laserObj.SetActive(false);
         }
     }
 
@@ -84,6 +111,11 @@ public class PlayerController : MonoBehaviour
 
             GetComponent<Renderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        if (collision.gameObject.CompareTag("LaserItem"))
+        {
+            _hasLaser = true;
         }
     }
 

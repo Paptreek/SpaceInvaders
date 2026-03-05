@@ -702,7 +702,7 @@ TextureImporter:
         width: 540
         height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -711,6 +711,226 @@ TextureImporter:
       bones: []
       spriteID: a76abb7e7d5b7c140b609553c80fa963
       internalID: 1820128081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser_item_1
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 2440
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c717a1cffa6d6249816b45c2c8a4092
+      internalID: -1931409652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser_item_2
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 2440
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2796493e8cb29374c8ffe96a9ccf5ee6
+      internalID: -243193257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser_item_3
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 2440
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc10e2f85122c854e9128c510e765f78
+      internalID: -30330417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser_item_4
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 2340
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79692d09c923a0a4ca7a9d299a20196c
+      internalID: -689585390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser_item_5
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 2340
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86918d3a16929304dbab95bc30165c3c
+      internalID: -1250806005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_outline_1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2170
+        width: 160
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38242282c5062d24197667cbde8e0e60
+      internalID: -418129989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_outline_2
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2170
+        width: 160
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2962d0ffe62f96343bb479fe2fb2f94c
+      internalID: -1316664407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_outline_3
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 2170
+        width: 160
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8363ced1a5c924b9833699823d1403
+      internalID: 1385364374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_outline_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2010
+        width: 160
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e9959d2ce90ff488ebe56ae259a95f
+      internalID: 2021264851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_outline_5
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2010
+        width: 160
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd048fd32b9c0a44fa3b1bd622779157
+      internalID: -1039694025
       vertices: []
       indices: 
       edges: []
@@ -729,7 +949,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":2,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       alien_lav: 30999344
       alien_orchid: 1515275868
@@ -753,8 +973,18 @@ TextureImporter:
       button_unmute_dark: 1243321290
       button_unmute_light: -463070686
       game_over_bg: -1780244756
+      laser_item_1: -1931409652
+      laser_item_2: -243193257
+      laser_item_3: -30330417
+      laser_item_4: -689585390
+      laser_item_5: -1250806005
       pause_bg: -1971257406
       player: 8020143640844766479
+      player_outline_1: -418129989
+      player_outline_2: -1316664407
+      player_outline_3: 1385364374
+      player_outline_4: 2021264851
+      player_outline_5: -1039694025
       spritesheet_26: -512964794
       spritesheet_27: 919490601
       spritesheet_28: -983610109

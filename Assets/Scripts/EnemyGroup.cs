@@ -11,6 +11,7 @@ public class EnemyGroup : MonoBehaviour
 
     [SerializeField] private GameObject _enemyMoveSoundHigh;
     [SerializeField] private GameObject _enemyMoveSoundLow;
+    [SerializeField] private GameObject _enemyExplosionSound;
     
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _enemyObjects = new List<GameObject>();
@@ -86,6 +87,11 @@ public class EnemyGroup : MonoBehaviour
                     _enemies[i].SetMoveSpeedToZero();
                     _moveSound.Stop();
                 }
+            }
+
+            if (enemy.IsDead)
+            {
+                _enemyExplosionSound.GetComponent<AudioSource>().Play();
             }
         }
 

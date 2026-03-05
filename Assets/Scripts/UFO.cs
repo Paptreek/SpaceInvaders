@@ -5,6 +5,7 @@ public class UFO : MonoBehaviour
     [SerializeField] private GameObject _explosionEffectObj;
     [SerializeField] private GameObject _explosionSoundObj;
     [SerializeField] private GameObject _moveSoundObj;
+    [SerializeField] private GameObject _laserItemObj;
 
     private Rigidbody2D _rb;
     private AudioSource _moveSound;
@@ -41,6 +42,7 @@ public class UFO : MonoBehaviour
         _spawnTimer -= Time.deltaTime;
 
         _explosionEffectObj.transform.position = transform.position;
+        _laserItemObj.transform.position = transform.position;
 
         if (_spawnTimer <= 0 && !_isActive)
         {
@@ -67,6 +69,7 @@ public class UFO : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            DropLaserItem();
             Kill();
         }
     }
@@ -108,5 +111,11 @@ public class UFO : MonoBehaviour
 
         _isActive = true;
         _moveSpeed = 1.5f;
+    }
+
+    private void DropLaserItem()
+    {
+        _laserItemObj.transform.position = transform.position;
+        Instantiate(_laserItemObj);
     }
 }

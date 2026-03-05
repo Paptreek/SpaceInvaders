@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
     private void Kill()
     {
         IsDead = true;
-        _explosionSound.GetComponent<AudioSource>().Play();
+        //_explosionSound.GetComponent<AudioSource>().Play();
         _explosionEffect.GetComponent<ParticleSystem>().Play();
         DestroyComponents();
         Destroy(gameObject, 0.75f);
