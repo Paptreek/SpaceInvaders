@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7070187841694888275}
   - component: {fileID: 7185932189168774413}
   - component: {fileID: 1240630652802656413}
+  - component: {fileID: 3451803130903369909}
   m_Layer: 0
   m_Name: LaserItem
   m_TagString: LaserItem
@@ -179,3 +180,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f791e2fdd29b654fb2ac856e852b9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Laser
+--- !u!95 &3451803130903369909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553796545659173425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8f3587a13129704a9272cda3cf8a990, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

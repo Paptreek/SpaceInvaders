@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _bulletSound;
     [SerializeField] private GameObject _explosionSound;
     [SerializeField] private GameObject _laserObj;
+    [SerializeField] private GameObject _laserChargedAnimation;
+    [SerializeField] private GameObject _laserShootSound;
+    [SerializeField] private GameObject _laserObtainedSound;
     [SerializeField] private ParticleSystem _explosionEffect;
 
     private Rigidbody2D _rb;
@@ -47,11 +51,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (_hasLaser)
+        {
+            _laserChargedAnimation.SetActive(true);
+        }
+        else
+        {
+            _laserChargedAnimation.SetActive(false);
+        }
+
         if (Keyboard.current.spaceKey.isPressed && _bulletTimer <= 0 && !_isDead)
         {
             if (_hasLaser)
             {
-                Debug.Log("Fire Laser!");
+                _laserShootSound.GetComponent<AudioSource>().Play();
                 _hasLaser = false;
                 _laserTimer = 0.1f;
 
@@ -59,9 +72,6 @@ public class PlayerController : MonoBehaviour
                 {
                     _laserObj.SetActive(true);
                 }
-                
-                // turn laser to active for 0.1 seconds
-                // player laser sound
             }
             else
             {
@@ -115,6 +125,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("LaserItem"))
         {
+            _laserObtainedSound.GetComponent<AudioSource>().Play();
             _hasLaser = true;
         }
     }
