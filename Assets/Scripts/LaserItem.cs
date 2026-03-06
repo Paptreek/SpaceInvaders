@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class LaserItem : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private float _moveSpeed = -4.5f;

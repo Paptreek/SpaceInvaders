@@ -61,6 +61,8 @@ public class EnemyGroup : MonoBehaviour
     {
         foreach (Enemy enemy in _enemies.ToList())
         {
+            _enemyMoveTimer = enemy.GetMoveTimer();
+
             if (enemy == null)
             {
                 _enemies.Remove(enemy);
@@ -103,14 +105,6 @@ public class EnemyGroup : MonoBehaviour
         }
         
         RandomEnemyFireBullet();
-    }
-
-    private void FixedUpdate()
-    {
-        foreach (Enemy enemy in _enemies.ToList())
-        {
-            _enemyMoveTimer = enemy.GetMoveTimer();
-        }
     }
 
     private void RandomEnemyFireBullet()

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -30,12 +29,10 @@ public class Title : MonoBehaviour
         if (AudioListener.volume == 1)
         {
             _muteButton.gameObject.SetActive(true);
-            //_muteButton.Select();
         }
         else
         {
             _unmuteButton.gameObject.SetActive(true);
-            //_unmuteButton.Select();
         }
 
         _backButton.gameObject.SetActive(true);
@@ -47,8 +44,6 @@ public class Title : MonoBehaviour
         _optionsButton.gameObject.SetActive(true);
         _quitButton.gameObject.SetActive(true);
 
-        //_playButton.Select();
-
         _muteButton.gameObject.SetActive(false);
         _unmuteButton.gameObject.SetActive(false);
         _backButton.gameObject.SetActive(false);
@@ -59,14 +54,12 @@ public class Title : MonoBehaviour
         if (AudioListener.volume == 1)
         {
             _unmuteButton.gameObject.SetActive(true);
-            //_unmuteButton.Select();
             _muteButton.gameObject.SetActive(false);
             AudioListener.volume = 0;
         }
         else
         {
             _muteButton.gameObject.SetActive(true);
-            //_muteButton.Select();
             _unmuteButton.gameObject.SetActive(false);
             AudioListener.volume = 1;
         }

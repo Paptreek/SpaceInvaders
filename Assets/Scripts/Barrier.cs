@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
-    [SerializeField] private int _hitCount = 0;
     [SerializeField] private GameObject _explosionSound;
     [SerializeField] private GameObject _explosionEffect;
+    
+    private int _hitCount = 0;
 
     private void Update()
     {

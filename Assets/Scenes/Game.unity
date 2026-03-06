@@ -252,9 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83b52ffae333d44bbf6dc5bbe3e4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrier
-  _hitCount: 0
   _explosionSound: {fileID: 650518668}
   _explosionEffect: {fileID: 452588273}
+  _hitCount: 5
 --- !u!61 &34591984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10713,9 +10713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83b52ffae333d44bbf6dc5bbe3e4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrier
-  _hitCount: 0
   _explosionSound: {fileID: 650518668}
   _explosionEffect: {fileID: 452588273}
+  _hitCount: 0
 --- !u!61 &321138347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17765,9 +17765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83b52ffae333d44bbf6dc5bbe3e4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrier
-  _hitCount: 0
   _explosionSound: {fileID: 650518668}
   _explosionEffect: {fileID: 452588273}
+  _hitCount: 5
 --- !u!61 &845908624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23997,9 +23997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83b52ffae333d44bbf6dc5bbe3e4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrier
-  _hitCount: 0
   _explosionSound: {fileID: 650518668}
   _explosionEffect: {fileID: 452588273}
+  _hitCount: 5
 --- !u!61 &1489540114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25631,9 +25631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83b52ffae333d44bbf6dc5bbe3e4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrier
-  _hitCount: 0
   _explosionSound: {fileID: 650518668}
   _explosionEffect: {fileID: 452588273}
+  _hitCount: 5
 --- !u!61 &1869614891
 BoxCollider2D:
   m_ObjectHideFlags: 0

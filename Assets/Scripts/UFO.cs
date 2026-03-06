@@ -23,7 +23,6 @@ public class UFO : MonoBehaviour
 
     public int NumberKilled { get; private set; }
 
-
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
