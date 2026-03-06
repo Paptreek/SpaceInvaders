@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
     private void CalculateScore()
     {
         int enemyPoints = _enemyGroup.GetComponent<EnemyGroup>().NumberOfEnemiesKilled * 100;
-        int ufoPoints = _ufo.GetComponent<UFO>().NumberKilled * 1000;
+        int ufoPoints = _ufo.GetComponent<UFO>().NumberKilled * 500;
 
         CurrentScore = enemyPoints + ufoPoints;
     }

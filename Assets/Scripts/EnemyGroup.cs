@@ -11,6 +11,7 @@ public class EnemyGroup : MonoBehaviour
 
     [SerializeField] private GameObject _enemyMoveSoundHigh;
     [SerializeField] private GameObject _enemyMoveSoundLow;
+    [SerializeField] private GameObject _enemyExplosionSound;
     
     private List<Enemy> _enemies = new List<Enemy>();
     private List<GameObject> _enemyObjects = new List<GameObject>();
@@ -60,6 +61,8 @@ public class EnemyGroup : MonoBehaviour
     {
         foreach (Enemy enemy in _enemies.ToList())
         {
+            _enemyMoveTimer = enemy.GetMoveTimer();
+
             if (enemy == null)
             {
                 _enemies.Remove(enemy);
@@ -87,6 +90,11 @@ public class EnemyGroup : MonoBehaviour
                     _moveSound.Stop();
                 }
             }
+
+            if (enemy.IsDead)
+            {
+                _enemyExplosionSound.GetComponent<AudioSource>().Play();
+            }
         }
 
         _moveSoundTimer += Time.deltaTime;
@@ -97,14 +105,6 @@ public class EnemyGroup : MonoBehaviour
         }
         
         RandomEnemyFireBullet();
-    }
-
-    private void FixedUpdate()
-    {
-        foreach (Enemy enemy in _enemies.ToList())
-        {
-            _enemyMoveTimer = enemy.GetMoveTimer();
-        }
     }
 
     private void RandomEnemyFireBullet()

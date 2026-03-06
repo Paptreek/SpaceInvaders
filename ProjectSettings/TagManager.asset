@@ -12,6 +12,7 @@ TagManager:
   - Barrier
   - UFO
   - Floor
+  - LaserItem
   layers:
   - Default
   - TransparentFX
