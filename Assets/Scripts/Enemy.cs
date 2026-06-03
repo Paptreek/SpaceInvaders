@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _rb;
     private bool _needsToMoveDown;
     private float _moveSpeed = 0.25f;
-    private float _moveTimer = 1.0f;
-    private float _updatedMoveTimer = 1.0f;
+    private float _moveTimer = 0.1f;
+    private float _updatedMoveTimer = 0.1f;
 
     public bool IsDead { get; private set; }
     public bool HasTouchedFloor { get; private set; }
